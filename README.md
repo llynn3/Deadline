@@ -6,7 +6,7 @@ Paws
 
 ## Project Description
 
-This app allows you to interact with other dog owners.
+This app allows you to interact with other dog owners and share your own content of your furry loved ones.
 
 ## Wireframes
 
