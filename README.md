@@ -15,7 +15,7 @@ This app allows you to interact with other dog owners and share your own content
 
 ## Component Hierarchy
 
-[ch4.pdf](https://github.com/llynn3/Paws/files/7456303/ch4.pdf)
+![ch4 drawio](https://user-images.githubusercontent.com/88290507/139746318-26b26249-cc42-48f8-8013-3103972954fa.png)
 
 ## ERD (Entity Relationship Diagram)
 
