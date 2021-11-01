@@ -10,7 +10,8 @@ This app allows you to interact with other dog owners.
 
 ## Wireframes
 
-https://imgur.com/dQQSryO
+![Screen Shot 2021-11-01 at 1 30 59 PM (2)](https://user-images.githubusercontent.com/88290507/139742837-87ed274c-07a1-44af-a0db-3459e1ef674e.png)
+![Screen Shot 2021-11-01 at 1 31 12 PM (2)](https://user-images.githubusercontent.com/88290507/139742853-d37c4690-67c1-4f59-b401-d111e68d368f.png)
 
 ## Component Hierarchy
 
