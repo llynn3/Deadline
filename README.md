@@ -6,7 +6,7 @@ Paws
 
 ## Project Description
 
-This app allows you to interact with other dog owners, share your own content of your furry loved ones and keep track of your pet tasks.
+This app allows you to interact with other dog owners and share your own content of your furry loved ones.
 
 ## Wireframes
 
@@ -39,6 +39,7 @@ If you plan on using technologies outside of the scope of the course's content, 
 
 - Have users be able to favorite and/or comments other users posts
 - Add a contact list for users
+- Add a list to keep track of your pet tasks
 - Subscribe to alerts/notifications
 
 ## Timeframes
