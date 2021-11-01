@@ -6,7 +6,7 @@ Paws
 
 ## Project Description
 
-This app allows you to interact with other dog owners, plan in-person meet-ups and share your own content of your furry loved ones.
+This app allows you to interact with other dog owners, share your own content of your furry loved ones and keep track of your pet tasks.
 
 ## Wireframes
 
