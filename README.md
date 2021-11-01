@@ -19,7 +19,7 @@ This app allows you to interact with other dog owners and share your own content
 
 ## ERD (Entity Relationship Diagram)
 
-Show us the relations between your tables (there must be three minimum), as well as their fields! Use [this](https://git.generalassemb.ly/sei-den-osos/data-modeling-intro-lesson#entity-relationship-diagrams-erds) as an example! In addition, please indicate which table will be used for full CRUD.
+![EDR drawio](https://user-images.githubusercontent.com/88290507/139749211-54877c92-e667-480c-93bf-5e1a995d056c.png)
 
 ## Additional Technologies
 
