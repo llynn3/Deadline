@@ -10,8 +10,8 @@ This app allows you to interact with other dog owners and share your own content
 
 ## Wireframes
 
-![Screen Shot 2021-11-01 at 1 30 59 PM (2)](https://user-images.githubusercontent.com/88290507/139742837-87ed274c-07a1-44af-a0db-3459e1ef674e.png)
-![Screen Shot 2021-11-01 at 1 31 12 PM (2)](https://user-images.githubusercontent.com/88290507/139742853-d37c4690-67c1-4f59-b401-d111e68d368f.png)
+![Screen Shot 2021-11-01 at 5 11 55 PM (2)](https://user-images.githubusercontent.com/88290507/139759070-799873f6-d856-4512-b9c4-c5cad8bdf22b.png)
+![Screen Shot 2021-11-01 at 5 12 48 PM (2)](https://user-images.githubusercontent.com/88290507/139759085-236dd37f-d283-462d-9532-7fcdfb85a38c.png)
 
 ## Component Hierarchy
 
@@ -19,7 +19,7 @@ This app allows you to interact with other dog owners and share your own content
 
 ## ERD (Entity Relationship Diagram)
 
-![EDR drawio](https://user-images.githubusercontent.com/88290507/139749211-54877c92-e667-480c-93bf-5e1a995d056c.png)
+![EDR drawio (1)](https://user-images.githubusercontent.com/88290507/139758867-726a11e3-cbad-41e7-b7c5-0738d93edc22.png)
 
 ## Additional Technologies
 
