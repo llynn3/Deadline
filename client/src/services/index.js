@@ -33,3 +33,19 @@ export const login = async (userInfo) => {
     console.error(error.message);
   }
 }
+
+export const logout = async () => {
+  try {
+    await axios.get(`${apiURL}/auth/logout`);
+  } catch (error) {
+    console.error(error.message)
+  }
+}
+
+export const createPost = async (newPost) => {
+  try {
+    await axios.post(`${apiURL}/posts/`, newPost);
+  } catch (error) {
+    console.error(error.message)
+  }
+}
