@@ -10,8 +10,8 @@ This app allows you to interact with other dog owners and share your own content
 
 ## Wireframes
 
-![Screen Shot 2021-11-01 at 5 11 55 PM (2)](https://user-images.githubusercontent.com/88290507/139759070-799873f6-d856-4512-b9c4-c5cad8bdf22b.png)
-![Screen Shot 2021-11-01 at 5 12 48 PM (2)](https://user-images.githubusercontent.com/88290507/139759085-236dd37f-d283-462d-9532-7fcdfb85a38c.png)
+![Screen Shot 2021-11-01 at 5 23 44 PM (2)](https://user-images.githubusercontent.com/88290507/139759983-51e9fdc1-59ed-4861-b3b1-7cb49aca42dd.png)
+![Screen Shot 2021-11-01 at 5 23 50 PM (2)](https://user-images.githubusercontent.com/88290507/139759994-3f4d7ecd-792b-471d-8f69-528016510171.png)
 
 ## Component Hierarchy
 
