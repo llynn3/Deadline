@@ -3,6 +3,7 @@ import { Route, Switch } from "react-router-dom";
 import Nav from "./components/Nav";
 import Home from "./screens/Home";
 import Login from "./screens/Login";
+import Register from "./screens/Register";
 import './App.css';
 
 function App() {
@@ -10,7 +11,7 @@ function App() {
 
   return (
     <div className="App">
-      <Nav />
+      <Nav user={user} setUser={setUser} />
       <Switch>
         <main>
           <Route exact path="/">
@@ -18,6 +19,9 @@ function App() {
           </Route>
           <Route path="/login">
             <Login setUser={setUser} />
+          </Route>
+          <Route path="/register">
+            <Register setUser={setUser} />
           </Route>
         </main>
       </Switch>
