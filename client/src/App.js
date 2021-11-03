@@ -5,6 +5,7 @@ import Home from "./screens/Home";
 import Login from "./screens/Login";
 import Register from "./screens/Register";
 import Posts from "./screens/Posts";
+import PostDetails from "./screens/PostDetails";
 import AddPost from "./screens/AddPost";
 import './App.css';
 
@@ -30,6 +31,9 @@ function App() {
           </Route>
           <Route path="/new">
             <AddPost />
+          </Route>
+          <Route path="/comments/:id">
+            <PostDetails user={user} />
           </Route>
         </main>
       </Switch>
