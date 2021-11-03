@@ -42,6 +42,15 @@ export const logout = async () => {
   }
 }
 
+export const getAllPosts = async () => {
+  try {
+    const response = await axios.get(`${apiURL}/posts`);
+    return response.data;
+  } catch (error) {
+    console.error(error.message);
+  }
+}
+
 export const createPost = async (newPost) => {
   try {
     await axios.post(`${apiURL}/posts/`, newPost);

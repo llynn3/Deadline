@@ -4,6 +4,7 @@ import Nav from "./components/Nav";
 import Home from "./screens/Home";
 import Login from "./screens/Login";
 import Register from "./screens/Register";
+import Posts from "./screens/Posts";
 import './App.css';
 
 function App() {
@@ -22,6 +23,9 @@ function App() {
           </Route>
           <Route path="/register">
             <Register setUser={setUser} />
+          </Route>
+          <Route path="/posts">
+            <Posts user={user} setUser={setUser} />
           </Route>
         </main>
       </Switch>
