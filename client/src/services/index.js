@@ -86,3 +86,12 @@ export const getComments = async () => {
     console.error(error.message);
   }
 }
+
+export const createComment = async (newComment, postId) => {
+  try {
+    const response = await axios.post(`${apiURL}/comments/${postId}`, newComment);
+    return response.data;
+  } catch (error) {
+    console.error(error.message)
+  }
+}

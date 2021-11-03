@@ -3,7 +3,6 @@ import { useHistory } from "react-router-dom";
 import { createPost } from "../services";
 
 const AddPost = () => {
-    const [title, setTitle] = useState("");
     const [body, setBody] = useState("");
     const [dogBreed, setDogBreed] = useState("");
 
@@ -12,7 +11,6 @@ const AddPost = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         const newPost = {
-            title,
             body,
             dog_breed: dogBreed,
         }
@@ -22,13 +20,6 @@ const AddPost = () => {
 
     return (
         <form onSubmit={handleSubmit}>
-            <label htmlFor="title">Title:</label>
-            <input id="title"
-            type="text"
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
-            required
-            />
             <label htmlFor="body">Body:</label>
             <input id="body"
             type="text"

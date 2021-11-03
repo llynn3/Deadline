@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import { getPostById } from "../services";
+import { useParams, useHistory } from "react-router-dom";
+import { createComment, getPostById } from "../services";
 
 const PostDetails = (props) => {
     const [post, setPost] = useState({});
-    const [comment, setComment] = useState("");
+    const [content, setContent] = useState("");
 
+    const history = useHistory();
     const params = useParams();
 
     const postId = params.id 
@@ -19,6 +20,18 @@ const PostDetails = (props) => {
         fetchedPost();
     }, [postId])
 
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        const newComment = {
+            content,
+        }
+        const response = await createComment(newComment, postId);
+        post.comments.push(response);
+        
+        history.push(`/comments/${postId}`)
+
+    };
+
 
     return (
         <div>
@@ -28,6 +41,19 @@ const PostDetails = (props) => {
             {post?.comments?.map((comment) => (
                 <p>{comment.content}</p>
             ))}
+            <section className="add-comment-container">
+                <h3>Add your own comment!</h3>
+                <form onSubmit={handleSubmit}>
+                    <label htmlFor="content"></label>
+                    <input id="content"
+                    type="text"
+                    value={content}
+                    onChange={(e) => setContent(e.target.value)}
+                    required
+                    />
+                    <button type="submit">Submit!</button>
+                </form>
+            </section>
         </div>
     );
 };
