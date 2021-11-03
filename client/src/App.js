@@ -5,6 +5,7 @@ import Home from "./screens/Home";
 import Login from "./screens/Login";
 import Register from "./screens/Register";
 import Posts from "./screens/Posts";
+import AddPost from "./screens/AddPost";
 import './App.css';
 
 function App() {
@@ -26,6 +27,9 @@ function App() {
           </Route>
           <Route path="/posts">
             <Posts user={user} setUser={setUser} />
+          </Route>
+          <Route path="/new">
+            <AddPost />
           </Route>
         </main>
       </Switch>

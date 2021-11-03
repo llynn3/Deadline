@@ -51,10 +51,38 @@ export const getAllPosts = async () => {
   }
 }
 
+export const getPostById = async (id, post) => {
+  try {
+    const response = await axios.get(`${apiURL}/posts/${id}`)
+    return response.data;
+  } catch (error) {
+    console.error(error.message);
+  }
+}
+
 export const createPost = async (newPost) => {
   try {
     await axios.post(`${apiURL}/posts/`, newPost);
   } catch (error) {
     console.error(error.message)
+  }
+}
+
+export const updatePost = async (id, post) => {
+  try {
+    const response = await axios.put(`${apiURL}/posts/${id}`)
+    return response.data;
+  } catch (error) {
+  console.error(error.message);
+  }
+}
+
+
+export const getComments = async () => {
+  try {
+    const response = await axios.get(`${apiURL}/comments`);
+    return response.data;
+  } catch (error) {
+    console.error(error.message);
   }
 }
