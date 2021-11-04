@@ -1,13 +1,13 @@
 import { useState } from "react";
-import { useHistory, useParams } from "react-router-dom";
-import { createPost, updatePost } from "../services";
+import { useHistory } from "react-router-dom";
+import { createPost } from "../services";
 
 const AddPost = () => {
     const [body, setBody] = useState("");
     const [dogBreed, setDogBreed] = useState("");
 
     const history = useHistory();
-    const params = useParams();
+
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -15,11 +15,7 @@ const AddPost = () => {
             body,
             dog_breed: dogBreed,
         }
-        if (params.id) {
-            await updatePost(params.id, newPost) 
-        } else {
         await createPost(newPost);
-        }
         history.push("/posts");
     };
 
