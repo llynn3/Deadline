@@ -9,6 +9,8 @@ const Posts = (props) => {
         getAllPosts().then((fetchedPosts) => setPosts(fetchedPosts));
     }, []);
 
+
+
     return (
         <section>
             {posts.map((post) => (
@@ -25,6 +27,9 @@ const Posts = (props) => {
                         </>
                     )}
                     <section className="comment-container">
+                        <Link to={`/posts/${post.id}`}>
+                            Edit post.
+                            </Link>
                         <Link to={`/comments/${post.id}`}>
                             Comments.
                         </Link>
