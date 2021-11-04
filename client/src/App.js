@@ -27,7 +27,7 @@ function App() {
           <Route path="/register">
             <Register setUser={setUser} />
           </Route>
-          <Route path="/posts">
+          <Route exact path="/posts">
             <Posts user={user} setUser={setUser} />
           </Route>
           <Route path="/new">

@@ -7,6 +7,7 @@ const Posts = (props) => {
 
     const params = useParams();
     const postId = params.id;
+    console.log(params, "params")
 
     useEffect(() => {
         getAllPosts().then((fetchedPosts) => setPosts(fetchedPosts));
@@ -15,6 +16,7 @@ const Posts = (props) => {
 
     const handleDelete = async (e) => {
         await deletePost(postId)
+        console.log(postId, "postId")
     }
 
 
