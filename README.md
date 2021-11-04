@@ -2,7 +2,7 @@
 
 ## Project Name
 
-Paws
+Pawprint
 
 ## Project Description
 
