@@ -1,14 +1,21 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import { getAllPosts } from "../services";
+import { Link, useParams } from "react-router-dom";
+import { deletePost, getAllPosts } from "../services";
 
 const Posts = (props) => {
     const [posts, setPosts] = useState([]);
 
+    const params = useParams();
+    const postId = params.id;
+
     useEffect(() => {
         getAllPosts().then((fetchedPosts) => setPosts(fetchedPosts));
     }, []);
+    console.log(posts)
 
+    const handleDelete = async (e) => {
+        await deletePost(postId)
+    }
 
 
     return (
@@ -31,7 +38,7 @@ const Posts = (props) => {
                             Edit post.
                             </Link>
                         <Link to={`/posts/${post.id}`}>
-                            Delete.
+                            <button onClick={handleDelete}>Delete.</button>
                             </Link>
                         <Link to={`/comments/${post.id}`}>
                             Comments.

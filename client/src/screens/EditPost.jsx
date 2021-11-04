@@ -16,9 +16,10 @@ const EditPost = (props) => {
         const fetchPosts = async () => {
             const fetchedPosts = await getAllPosts();
             const post = fetchedPosts.find((post) => post.id === postId)
-            setSelectedPost(post)
-            setBody(post.body)
-            setDogBreed(post.dog_breed)
+            // setSelectedPost(post)
+            // setBody(post.body)
+            // setDogBreed(post.dog_breed)
+
         }
         fetchPosts()
     }, [])

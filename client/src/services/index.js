@@ -68,18 +68,18 @@ export const createPost = async (newPost) => {
   }
 }
 
-export const updatePost = async (id, post) => {
+export const updatePost = async (editPost, postId) => {
   try {
-    const response = await axios.put(`${apiURL}/posts/${id}`)
+    const response = await axios.put(`${apiURL}/posts/${postId}`, editPost)
     return response.data;
   } catch (error) {
   console.error(error.message);
   }
 }
 
-export const deletePost = async (id) => {
+export const deletePost = async (postId) => {
   try {
-    const response = await axios.delete(`${apiURL}/posts/${id}`)
+    const response = await axios.delete(`${apiURL}/posts/${postId}`)
     return response.data;
   } catch (error) {
     console.error(error.message);
