@@ -1,6 +1,7 @@
 from flask import Flask, g
 from flask_cors import CORS 
 from flask_login import LoginManager
+import os 
 
 from db import DATABASE, initialize 
 from user import User
@@ -18,7 +19,7 @@ login_manager = LoginManager()
 
 app = Flask(__name__)
 
-app.secret_key = 'iwanttohaveapompskyoranaussieoragoldendoodlesomeday'
+app.secret_key = os.environ.get('SECRET') or 'iwanttohaveapompskyoranaussieoragoldendoodlesomeday'
 login_manager.init_app(app)
 
 @login_manager.user_loader
@@ -46,7 +47,16 @@ app.register_blueprint(user)
 app.register_blueprint(post)
 app.register_blueprint(comment)
 
-CORS(app, origins=['http://localhost:3000'], supports_credentials=True)
+origins=['http://localhost:3000']
+
+if 'DATABASE_URL' in os.environ:
+    initialize([User, Post, Comment])
+    app.config['SESSION_COOKIE_SECURE'] = True
+    app.config['SESSION_COOKIE_HTTPONLY'] = False
+    app.config['SESSION_COOKIE_SAMESITE'] = 'None'
+    origins.append(os.environ.get('CLIENT_URL'))
+
+CORS(app, origins=origins, supports_credentials=True)
 
 if __name__ == '__main__':
     initialize([User, Post, Comment])
