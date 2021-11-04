@@ -31,11 +31,12 @@ const EditPost = (props) => {
                 dog_breed : dogBreed,
             }
             await updatePost(editPost, postId)
-            history.push(`/posts/${postId}`)
+            history.push(`/posts`)
         } catch (error) {
             console.error(error.message)
         }
     }
+
 
     return (
         <form onSubmit={handleSubmit}>

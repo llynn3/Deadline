@@ -27,8 +27,11 @@ const Posts = (props) => {
                         </>
                     )}
                     <section className="comment-container">
-                        <Link to={`/posts/${post.id}`}>
+                        <Link to={`/posts/edit/${post.id}`}>
                             Edit post.
+                            </Link>
+                        <Link to={`/posts/${post.id}`}>
+                            Delete.
                             </Link>
                         <Link to={`/comments/${post.id}`}>
                             Comments.

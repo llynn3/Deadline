@@ -36,7 +36,7 @@ function App() {
           <Route path="/comments/:id">
             <PostDetails user={user} setUser={setUser}/>
           </Route>
-          <Route path="/posts/:id">
+          <Route path="/posts/edit/:id">
             <EditPost user={user} setUser={setUser} />
           </Route>
         </main>

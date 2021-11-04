@@ -77,6 +77,14 @@ export const updatePost = async (id, post) => {
   }
 }
 
+export const deletePost = async (id) => {
+  try {
+    const response = await axios.delete(`${apiURL}/posts/${id}`)
+    return response.data;
+  } catch (error) {
+    console.error(error.message);
+  }
+}
 
 export const getComments = async () => {
   try {
