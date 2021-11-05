@@ -1,0 +1,26 @@
+.each-post {
+    background-color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid;
+    box-shadow: 1px 2px 3px rgba(0,0,0,0.9);
+    margin: 10px auto;
+    padding: 15px;
+    height: 350px;
+    width: 300px;
+}
+
+.comments-link {
+    text-align: center;
+    font-weight: bold;
+    font-family: 'PT Serif', sans-serif;
+}
+
+.edit-delete {
+    font-family: 'PT Serif', sans-serif;
+    text-align: end;
+}
+
+.username {
+    color: #ef9273;
+}

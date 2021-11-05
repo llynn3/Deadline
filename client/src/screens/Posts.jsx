@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { deletePost, getAllPosts } from "../services";
+import './Posts.css';
 
 const Posts = (props) => {
   const [posts, setPosts] = useState([]);
@@ -20,14 +21,14 @@ const Posts = (props) => {
   };
 
   return (
-    <section>
+    <section className="posts">
       {posts?.map((post) => (
-        <div>
+        <div className="each-post">
           {props.user ? (
             <>
-              <h3>{props.user.username}</h3>
-              <h4>{post.body}</h4>
-              <h5>{post.dog_breed}</h5>
+              <h3 className="username">{props.user.username}</h3>
+              <h4 className="post-body">{post.body}</h4>
+              <h5 className="dog-breed">{post.dog_breed}</h5>
             </>
           ) : (
             <>
@@ -35,12 +36,13 @@ const Posts = (props) => {
             </>
           )}
           {/* <Posts key={posts.id} post={post} /> */}
-          <section className="comment-container">
+          <section className="comments-link"><br/>
+          <Link to={`/comments/${post.id}`}>Comments.</Link><br/><br/><br/><br/>
+          <div className="edit-delete">
             <Link to={`/posts/edit/${post.id}`}>Edit post.</Link>
-            <Link to={`/posts/${post.id}`}>
-              <button onClick={() => handleDelete(post.id)}>Delete.</button>
+            <Link to={`/posts/${post.id}`} onClick={() => handleDelete(post.id)}>Delete.
             </Link>
-            <Link to={`/comments/${post.id}`}>Comments.</Link>
+            </div>
           </section>
         </div>
       ))}

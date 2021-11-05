@@ -9,6 +9,7 @@ import PostDetails from "./screens/PostDetails";
 import EditPost from "./screens/EditPost";
 import AddPost from "./screens/AddPost";
 import './App.css';
+import './components/Nav.css';
 
 function App() {
   const [user, setUser] = useState(null);

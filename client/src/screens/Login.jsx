@@ -22,7 +22,7 @@ const Login = (props) => {
 
   return (
     <section className="login">
-      <h3>Welcome back!</h3>
+      <h3 className="welcome">Welcome back!</h3>
       <form className="login-form" onSubmit={handleSubmit}>
         <label htmlFor="username">Username:</label>
         <input

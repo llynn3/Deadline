@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { register } from "../services";
+import './Register.css';
 
 const Register = (props) => {
     const [username, setUsername] = useState("");
@@ -18,9 +19,9 @@ const Register = (props) => {
     }
 
     return (
-        <section>
-            <h3>Register</h3>
-            <form onSubmit={handleSubmit}>
+        <section className="register">
+            <h3 classname="register-header">Join us!</h3>
+            <form className="register-form" onSubmit={handleSubmit}>
                 <label htmlFor="username">Username:</label>
                 <input id="username"
                 type="text"
@@ -42,7 +43,7 @@ const Register = (props) => {
                 onChange={(e) => setPassword(e.target.value)}
                 required
                 />
-                <button type="submit">Sign up!</button>
+                <button className="register-button" type="submit">Sign up!</button>
             </form>
         </section>
     );

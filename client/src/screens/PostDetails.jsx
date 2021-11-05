@@ -36,12 +36,12 @@ const PostDetails = (props) => {
 
     return (
         <div>
-            {/* <h3>{props.user.username}</h3> */}
-            {/* <h3>{post.title}</h3>
-            <h4>{post.body}</h4> */}
+            <h3>{props.user.username}</h3>
+            <h3>{post.title}</h3>
+            <h4>{post.body}</h4>
             <h3>Comments:</h3>
             {post?.comments?.map((comment) => (
-                <p>{comment.content}</p>
+                <p>{comment.user.username}<br/>{comment.content}</p> 
             ))}
             <section className="add-comment-container">
                 <h3>Add your own comment!</h3>

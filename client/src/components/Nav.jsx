@@ -1,16 +1,23 @@
 import './Nav.css';
+import { logout } from "../services";
 
 import { Link } from "react-router-dom";
 
 const Nav = () => {
+  const handleClick = async (e) => {
+    e.preventDefault();
+    await logout();
+  }
+
   return (
     <nav>
       <div className="nav-bar">
-      <Link to="/" style={{ color: '#000000' }}>Home</Link>
-      <Link to="/login" style={{ color: '#000000' }}>Login</Link>
-      <Link to="/register" style={{ color: '#000000' }}>Register</Link>
-      <Link to="/posts" style={{ color: '#000000' }}>Posts</Link>
-      <Link to="/new" style={{ color: '#000000' }}>New Post</Link>
+      <Link to="/">Home</Link>
+      <Link to="/login" >Login</Link>
+      <Link to="/register">Register</Link>
+      <Link to="/posts">Posts</Link>
+      <Link to="/new">New Post</Link>
+      <button onClick={handleClick}>Log out</button>
       </div>
     </nav>
   );
