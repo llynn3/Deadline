@@ -3,7 +3,7 @@ import { getAllPosts, updatePost } from "../services";
 import { useHistory, useParams } from "react-router-dom";
 
 const EditPost = (props) => {
-    const [selectedPost, setSelectedPost] = useState({});
+    // const [selectedPost, setSelectedPost] = useState({});
     const [body, setBody] = useState("");
     const [dogBreed, setDogBreed] = useState("");
     

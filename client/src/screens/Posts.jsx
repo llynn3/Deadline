@@ -1,18 +1,22 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { deletePost, getAllPosts } from "../services";
 
 const Posts = (props) => {
     const [posts, setPosts] = useState([]);
 
+    const history = useHistory();
+
     useEffect(() => {
         getAllPosts().then((fetchedPosts) => setPosts(fetchedPosts));
     }, []);
-    console.log(posts)
+    // console.log(posts)
+    // console.log(props.user.username)
 
     const handleDelete = async (postId) => {
         await deletePost(postId)
-        console.log(postId, "postId")
+
+        history.push("/posts")
     }
 
 
@@ -22,7 +26,7 @@ const Posts = (props) => {
                 <div>
                     {props.user ? (
                         <>
-                    <h3>{post.title}</h3>
+                    <h3>{props.user.username}</h3>
                     <h4>{post.body}</h4>
                     <h5>{post.dog_breed}</h5>
                     </>
@@ -31,6 +35,7 @@ const Posts = (props) => {
                         <Link to='/login'>Log in to view posts.</Link>
                         </>
                     )}
+                                        {/* <Posts key={posts.id} post={post} /> */}
                     <section className="comment-container">
                         <Link to={`/posts/edit/${post.id}`}>
                             Edit post.

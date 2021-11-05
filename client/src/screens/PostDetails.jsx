@@ -15,7 +15,8 @@ const PostDetails = (props) => {
         const fetchedPost = async () => {
             const currentPost = await getPostById(postId);
             setPost(currentPost);
-            console.log(currentPost);
+            // console.log(currentPost);
+            console.log(props.user)
         }
         fetchedPost();
     }, [postId])
@@ -35,8 +36,9 @@ const PostDetails = (props) => {
 
     return (
         <div>
-            <h3>{post.title}</h3>
-            <h4>{post.body}</h4>
+            {/* <h3>{props.user.username}</h3> */}
+            {/* <h3>{post.title}</h3>
+            <h4>{post.body}</h4> */}
             <h3>Comments:</h3>
             {post?.comments?.map((comment) => (
                 <p>{comment.content}</p>
