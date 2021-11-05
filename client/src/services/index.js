@@ -42,14 +42,6 @@ export const logout = async () => {
   }
 }
 
-export const verify = async () => {
-  try {
-    const response = await axios.get('/auth/verify');
-    return response.data;
-  } catch (error) {
-    console.error(error.message);
-  }
-}
 
 export const getAllPosts = async () => {
   try {

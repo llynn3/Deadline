@@ -14,3 +14,9 @@ root {
   overflow: auto;
   position: relative;
 } */
+
+@media screen and (max-width:450px) {
+  .nav-bar {
+    background-color: #ef9273;
+  }
+}
