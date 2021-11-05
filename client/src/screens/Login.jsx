@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { login } from "../services";
+import './Login.css';
 
 const Login = (props) => {
   const [username, setUsername] = useState("");
@@ -20,9 +21,9 @@ const Login = (props) => {
   };
 
   return (
-    <section>
-      <h3>Login</h3>
-      <form onSubmit={handleSubmit}>
+    <section className="login">
+      <h3>Welcome back!</h3>
+      <form className="login-form" onSubmit={handleSubmit}>
         <label htmlFor="username">Username:</label>
         <input
           id="username"
@@ -30,15 +31,15 @@ const Login = (props) => {
           value={username}
           onChange={(e) => setUsername(e.target.value)}
           required
-        />
+        /><br/>
         <label htmlFor="password">Password:</label>
         <input
           id="password"
           type="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-        />
-        <button type="submit">Log in!</button>
+        /><br/>
+        <button className="login-button" type="submit">Log in</button>
       </form>
     </section>
   );
