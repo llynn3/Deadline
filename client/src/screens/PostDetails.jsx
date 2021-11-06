@@ -37,7 +37,7 @@ const PostDetails = (props) => {
 
     return (
         <section className="post-details">
-            <h3>{props.user.username}</h3>
+            <h3 className="user">{props.user.username}</h3>
             <h4>{post.body}</h4>
             <h3>Comments:</h3>
             {post?.comments?.map((comment) => (
