@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { createPost } from "../services";
+import './AddPost.css';
 
 const AddPost = () => {
     const [body, setBody] = useState("");
@@ -20,23 +21,29 @@ const AddPost = () => {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
+        <section className="add">
+            <h3 className="new-post">New post</h3>
+        <form className="add-post" onSubmit={handleSubmit}>
             <label htmlFor="body">Body:</label>
-            <input id="body"
+            <textarea id="body"
             type="text"
             value={body}
             onChange={(e) => setBody(e.target.value)}
             required
+            tabIndex="3"
+            cols="10"
+            rows="5"
             />
             <label htmlFor="dogBreed">Dog Breed:</label>
-            <input id="dogBreed"
+            <textarea id="dogBreed"
             type="text"
             value={dogBreed}
             onChange={(e) => setDogBreed(e.target.value)}
             required
             />
-            <button type="submit">Post!</button>
+            <button className="add-button" type="submit">Post!</button>
         </form>
+        </section>
     )
 }
 

@@ -1,0 +1,30 @@
+.add {
+    background-color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid;
+    box-shadow: 1px 2px 3px rgba(0,0,0,0.9);
+    margin: 10px auto;
+    padding: 15px;
+    height: 350px;
+    width: 300px;
+    font-family: 'Nunito', sans-serif;
+}
+
+.add-post {
+    margin-top: 30px;
+    display: grid;
+    flex-direction: column;
+    justify-content: center;
+    width: 300px;
+}
+
+.add-button {
+    border-radius: 5px;
+    background-color: #ef9273;
+}
+
+.add-button:hover {
+    background-color: #000000;
+    color: #ef9273;
+}

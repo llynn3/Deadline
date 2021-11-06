@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams, useHistory } from "react-router-dom";
 import { createComment, getPostById } from "../services";
+import './PostDetails.css';
 
 const PostDetails = (props) => {
     const [post, setPost] = useState({});
@@ -35,16 +36,14 @@ const PostDetails = (props) => {
 
 
     return (
-        <div>
+        <section className="post-details">
             <h3>{props.user.username}</h3>
-            <h3>{post.title}</h3>
             <h4>{post.body}</h4>
             <h3>Comments:</h3>
             {post?.comments?.map((comment) => (
                 <p>{comment.user.username}<br/>{comment.content}</p> 
             ))}
-            <section className="add-comment-container">
-                <h3>Add your own comment!</h3>
+                <h3 classname="add-comment">Add your own comment!</h3>
                 <form onSubmit={handleSubmit}>
                     <label htmlFor="content"></label>
                     <input id="content"
@@ -56,7 +55,6 @@ const PostDetails = (props) => {
                     <button type="submit">Submit!</button>
                 </form>
             </section>
-        </div>
     );
 };
 
