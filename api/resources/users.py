@@ -1,4 +1,4 @@
-from flask import Blueprint, jsonify, request
+from flask import Blueprint, jsonify, request, session
 from flask_bcrypt import check_password_hash, generate_password_hash
 from flask_login import login_user, logout_user, login_required
 from peewee import DoesNotExist
@@ -50,3 +50,4 @@ def login():
 def logout():
     logout_user()
     return jsonify(message="successfully logged logout!"), 200
+

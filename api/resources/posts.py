@@ -12,8 +12,8 @@ post = Blueprint('posts', __name__, url_prefix='/posts')
 @login_required
 def get_all_posts():
     try:
-        posts = [model_to_dict(post) for post in Post.select()]
-        return jsonify(posts)
+        posts = [model_to_dict(post, exclude=[User.password]) for post in Post.select()]
+        return jsonify(posts), 200
     except DoesNotExist:
         return jsonify(message="error getting posts."), 500
 
@@ -22,7 +22,7 @@ def get_all_posts():
 def get_one_post(id):
     try:
         post = Post.get_by_id(id)
-        return jsonify(model_to_dict(post)), 200
+        return jsonify(model_to_dict(post, backrefs=True)), 200
     except DoesNotExist:
         return jsonify(error="error getting the post."), 500
 
@@ -30,10 +30,10 @@ def get_one_post(id):
 @login_required
 def add_post():
     body = request.get_json()
-    post = Post.create(**body)
-    return jsonify(model_to_dict(post)), 201
+    post = Post.create(**body, user_id = current_user.id)
+    return jsonify(model_to_dict(post, exclude=[User.password])), 201
 
-@post.route('/<id>', methods=['PUT'])
+@post.route('/<int:id>', methods=['PUT'])
 @login_required
 def update_post(id):
     try:
@@ -43,12 +43,12 @@ def update_post(id):
             .where(Post.id == id)
             .execute())
         post = Post.get_by_id(id)
-        return jsonify(model_to_dict(post))
+        return jsonify(model_to_dict(post, exclude=[User.password]))
     except DoesNotExist:
         return jsonify(message="error getting post."), 500
 
 
-@post.route('/<id>', methods=['DELETE'])
+@post.route('/<int:id>', methods=['DELETE'])
 @login_required
 def delete_post(id):
     try:
@@ -59,4 +59,3 @@ def delete_post(id):
         return jsonify(message="post successfully deleted."), 204
     except DoesNotExist:
         return jsonify(message="error getting post."), 500
-

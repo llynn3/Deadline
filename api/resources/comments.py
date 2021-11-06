@@ -5,6 +5,7 @@ from playhouse.shortcuts import model_to_dict
 
 from post import Post
 from comment import Comment
+from user import User
 
 comment = Blueprint('comments', __name__, url_prefix='/comments')
 
@@ -12,7 +13,7 @@ comment = Blueprint('comments', __name__, url_prefix='/comments')
 @login_required
 def get_all_comments():
     try:
-        comments = [model_to_dict(comment) for comment in Comment.select()]
+        comments = [model_to_dict(comment, exclude=[User.password]) for comment in Comment.select()]
         return jsonify(comments), 200
     except DoesNotExist:
         return jsonify(error="error getting the comments."), 500
@@ -21,8 +22,8 @@ def get_all_comments():
 @login_required
 def create_comment(post_id):
     body = request.get_json()
-    comment = Comment.create(**body, post_id=post_id)
-    return jsonify(model_to_dict(comment)), 201
+    comment = Comment.create(**body, post_id = post_id, user_id = current_user.id)
+    return jsonify(model_to_dict(comment, exclude=[User.password])), 201
 
 @comment.route('/<id>', methods=['DELETE'])
 @login_required
