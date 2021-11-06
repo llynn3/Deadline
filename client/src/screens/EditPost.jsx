@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { getAllPosts, updatePost } from "../services";
 import { useHistory, useParams } from "react-router-dom";
+import './EditPost.css';
 
 const EditPost = (props) => {
     // const [selectedPost, setSelectedPost] = useState({});
@@ -40,13 +41,13 @@ const EditPost = (props) => {
 
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form className="edit-form" onSubmit={handleSubmit}>
             <label htmlFor="body">Body:
             <input id="body" type="text" value={body} onChange={(e) => setBody(e.target.value)} /></label>
-            <label htmlFor="dogBreed">Dog Breed And Name:
+            <label htmlFor="dogBreed">Name and Dog Breed:
             <input id="dogBreed" type="text" value={dogBreed} onChange={(e) => setDogBreed(e.target.value)} />
             </label>
-            <button type="submit">Done editing</button>
+            <button className="edit-button" type="submit">Done editing</button>
         </form>
     )
 }

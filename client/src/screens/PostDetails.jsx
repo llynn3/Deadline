@@ -39,9 +39,9 @@ const PostDetails = (props) => {
         <section className="post-details">
             <h3 className="user">{props.user.username}</h3>
             <h4>{post.body}</h4>
-            <h3>Comments:</h3>
+            <h3>Comments</h3>
             {post?.comments?.map((comment) => (
-                <p>{comment.user.username}<br/>{comment.content}</p> 
+                <p>{comment.user.username}: {comment.content}</p> 
             ))}
                 <h3 classname="add-comment">Add your own comment!</h3>
                 <form onSubmit={handleSubmit}>
@@ -52,7 +52,7 @@ const PostDetails = (props) => {
                     onChange={(e) => setContent(e.target.value)}
                     required
                     />
-                    <button type="submit">Submit!</button>
+                    <button className="post-comment-button" type="submit">Submit!</button>
                 </form>
             </section>
     );
