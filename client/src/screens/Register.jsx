@@ -20,7 +20,7 @@ const Register = (props) => {
 
     return (
         <section className="register">
-            <h3 classname="register-header">Join us!</h3>
+            <h3 className="register-header">Join us!</h3>
             <form className="register-form" onSubmit={handleSubmit}>
                 <label htmlFor="username">Username:</label>
                 <input id="username"

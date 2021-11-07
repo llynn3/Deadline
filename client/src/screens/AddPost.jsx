@@ -4,7 +4,8 @@ import { createPost } from "../services";
 import './AddPost.css';
 
 const AddPost = () => {
-    const [body, setBody] = useState("");
+    const [image, setImage] = useState(null);
+    const [caption, setCaption] = useState("");
     const [dogBreed, setDogBreed] = useState("");
 
     const history = useHistory();
@@ -13,7 +14,8 @@ const AddPost = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         const newPost = {
-            body,
+            image,
+            caption,
             dog_breed: dogBreed,
         }
         await createPost(newPost);
@@ -24,11 +26,19 @@ const AddPost = () => {
         <section className="add">
             <h3 className="new-post">New post</h3>
         <form className="add-post" onSubmit={handleSubmit}>
-            <label htmlFor="body">Body:</label>
-            <textarea id="body"
+            {image && <img src={URL.createObjectURL(image)} alt="preview" />}
+            <label htmlFor="image">Image:</label>
+            <input 
+            id="image"
+            type="file"
+            required
+            onChange={(e) => setImage(e.target.files[0])}
+            />
+            <label htmlFor="caption">Caption:</label>
+            <textarea id="caption"
             type="text"
-            value={body}
-            onChange={(e) => setBody(e.target.value)}
+            value={caption}
+            onChange={(e) => setCaption(e.target.value)}
             required
             tabIndex="3"
             cols="10"
