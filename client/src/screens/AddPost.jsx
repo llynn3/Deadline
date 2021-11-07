@@ -6,7 +6,6 @@ import './AddPost.css';
 const AddPost = () => {
     const [image, setImage] = useState(null);
     const [caption, setCaption] = useState("");
-    const [dogBreed, setDogBreed] = useState("");
 
     const history = useHistory();
 
@@ -16,7 +15,6 @@ const AddPost = () => {
         const newPost = {
             image,
             caption,
-            dog_breed: dogBreed,
         }
         await createPost(newPost);
         history.push("/posts");
@@ -26,7 +24,7 @@ const AddPost = () => {
         <section className="add">
             <h3 className="new-post">New post</h3>
         <form className="add-post" onSubmit={handleSubmit}>
-            {image && <img src={URL.createObjectURL(image)} alt="preview" />}
+            {image && <img src={URL.createObjectURL(image)} alt="preview" height="150" width="250" />}
             <label htmlFor="image">Image:</label>
             <input 
             id="image"
@@ -44,13 +42,13 @@ const AddPost = () => {
             cols="10"
             rows="5"
             />
-            <label htmlFor="dogBreed">Dog Breed:</label>
+            {/* <label htmlFor="dogBreed">Dog Breed:</label>
             <textarea id="dogBreed"
             type="text"
             value={dogBreed}
             onChange={(e) => setDogBreed(e.target.value)}
             required
-            />
+            /> */}
             <button className="add-button" type="submit">Post!</button>
         </form>
         </section>

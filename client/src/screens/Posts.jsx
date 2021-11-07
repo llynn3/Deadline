@@ -27,8 +27,8 @@ const Posts = (props) => {
           {props.user ? (
             <>
               <h3 className="username">{props.user.username}</h3>
-              <h4 className="post-body">{post.body}</h4>
-              <h5 className="dog-breed">{post.dog_breed}</h5>
+              <img className="pic" src={post.image_url} alt={post.caption} height="400" width="290" />
+              <h4 className="post-body">{post.caption}</h4>
             </>
           ) : (
             <>
