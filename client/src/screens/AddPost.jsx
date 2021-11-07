@@ -24,7 +24,7 @@ const AddPost = () => {
         <section className="add">
             <h3 className="new-post">New post</h3>
         <form className="add-post" onSubmit={handleSubmit}>
-            {image && <img src={URL.createObjectURL(image)} alt="preview" height="150" width="250" />}
+            {image && <img src={URL.createObjectURL(image)} alt="preview" height="300" width="250" />}
             <label htmlFor="image">Image:</label>
             <input 
             id="image"
