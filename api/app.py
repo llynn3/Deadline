@@ -61,3 +61,5 @@ CORS(app, origins=origins, supports_credentials=True)
 if __name__ == '__main__':
     initialize([User, Post, Comment])
     app.run(debug=DEBUG, port=PORT)
+
+# hi
