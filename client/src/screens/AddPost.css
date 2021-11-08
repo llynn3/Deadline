@@ -7,7 +7,7 @@
     margin: 10px auto;
     padding: 15px;
     height: 650px;
-    width: 300px;
+    width: 350px;
     font-family: 'Nunito', sans-serif;
 }
 
@@ -15,7 +15,6 @@
     margin-top: 10px;
     display: grid;
     flex-direction: column;
-    justify-content: center;
     width: 300px;
 }
 

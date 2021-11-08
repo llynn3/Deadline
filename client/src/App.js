@@ -9,6 +9,7 @@ import Posts from "./screens/Posts";
 import PostDetails from "./screens/PostDetails";
 import EditPost from "./screens/EditPost";
 import AddPost from "./screens/AddPost";
+import Footer from "./screens/Footer";
 import './App.css';
 import './components/Nav.css';
 
@@ -22,16 +23,18 @@ function App() {
         <main>
           <Route exact path="/">
             <Nav user={user} setUser={setUser} />
-            <Landing />
+            {/* <Landing /> */}
           </Route>
           <Route path="/home">
             <Nav user={user} />
             <Home />
           </Route>
           <Route path="/login">
+          <Nav user={user} />
             <Login setUser={setUser} />
           </Route>
           <Route path="/register">
+            <Nav user={user} />
             <Register setUser={setUser} />
           </Route>
           <Route exact path="/posts">
@@ -50,6 +53,7 @@ function App() {
             <Nav user={user} />
             <EditPost user={user} setUser={setUser} />
           </Route>
+          <Footer />
         </main>
       </Switch>
     </div>
