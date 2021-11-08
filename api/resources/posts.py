@@ -1,12 +1,18 @@
+
+import boto3
 from flask import Blueprint, jsonify, request
 from flask_login import current_user, login_required
 from peewee import DoesNotExist
 from playhouse.shortcuts import model_to_dict
+import os
+import time
 
 from post import Post
 from user import User
 
 post = Blueprint('posts', __name__, url_prefix='/posts')
+
+s3 = boto3.resource('s3')
 
 @post.route('/')
 @login_required
@@ -29,8 +35,13 @@ def get_one_post(id):
 @post.route('/', methods=['POST'])
 @login_required
 def add_post():
-    body = request.get_json()
-    post = Post.create(**body, user_id = current_user.id)
+    image = request.files['image']
+    image_name = str(time.time_ns())
+    response = s3.Bucket(os.environ.get('BUCKET')).put_object(Body=image, Key=image_name)
+    caption = request.form['caption']
+    image_url = f"https://{os.environ.get('BUCKET')}.s3.amazonaws.com/{image_name}"
+
+    post = Post.create(caption=caption, image_url=image_url, user_id = current_user.id)
     return jsonify(model_to_dict(post, exclude=[User.password])), 201
 
 @post.route('/<int:id>', methods=['PUT'])

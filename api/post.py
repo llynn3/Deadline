@@ -7,8 +7,8 @@ from user import User
 
 class Post(Model):
     user = ForeignKeyField(User, backref='posts')
-    body = CharField()
-    dog_breed = CharField()
+    image_url = TextField()
+    caption = CharField()
     created_at = DateTimeField (default=datetime.datetime.now)
 
     class Meta:
