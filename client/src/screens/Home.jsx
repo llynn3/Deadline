@@ -8,7 +8,6 @@ const Home = (props) => {
     <section className="home">
       <img className="dog-sign" src={welcome} alt="welcome"/><br/>
       Welcome home 
-      <p>{props.user}</p>
     </section>
   );
 };
