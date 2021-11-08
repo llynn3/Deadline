@@ -66,11 +66,12 @@ export const createPost = async (newPost) => {
     const formData = new FormData();
     formData.append('caption', newPost.caption);
     formData.append('image', newPost.image);
-    await axios.post(`${apiURL}/posts/`, formData, 
+    const response = await axios.post(`${apiURL}/posts/`, formData, 
     { headers: {
       'Content-Type': 'multipart/form-data' 
     }
   });
+  return response.data;
   } catch (error) {
     console.error(error.message)
   }
