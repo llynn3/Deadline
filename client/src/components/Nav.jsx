@@ -2,7 +2,7 @@ import './Nav.css';
 import { logout } from "../services";
 import { Link } from "react-router-dom";
 
-const Nav = () => {
+const Nav = (props) => {
   const handleClick = async () => {
     await logout();
     props.setUser(null);
@@ -11,7 +11,9 @@ const Nav = () => {
   return (
     <nav>
       <div className="nav-bar">
-      <Link to="/">Home</Link>
+      <Link to="/">Home
+      {/* <h4 style={{color: "#4895ef"}}>{user.username}!</h4> */}
+      </Link>
       {props.user ? (
         <>
         <Link to="/posts">Posts</Link>

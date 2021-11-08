@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Route, Switch } from "react-router-dom";
 import Nav from "./components/Nav";
+import Landing from "./screens/Landing";
 import Home from "./screens/Home";
 import Login from "./screens/Login";
 import Register from "./screens/Register";
@@ -17,11 +18,15 @@ function App() {
 
   return (
     <div className="App">
-      <Nav user={user} />
       <Switch>
         <main>
           <Route exact path="/">
-            <Home user={user} setUser={user} />
+            <Nav user={user} setUser={setUser} />
+            <Landing />
+          </Route>
+          <Route path="/home">
+            <Nav user={user} />
+            <Home />
           </Route>
           <Route path="/login">
             <Login setUser={setUser} />
@@ -30,15 +35,19 @@ function App() {
             <Register setUser={setUser} />
           </Route>
           <Route exact path="/posts">
+            <Nav user={user} />
             <Posts user={user} setUser={setUser} />
           </Route>
           <Route path="/new">
+          <Nav user={user} />
             <AddPost />
           </Route>
           <Route path="/comments/:id">
+            <Nav user={user} />
             <PostDetails user={user} setUser={setUser}/>
           </Route>
           <Route path="/posts/edit/:id">
+            <Nav user={user} />
             <EditPost user={user} setUser={setUser} />
           </Route>
         </main>
