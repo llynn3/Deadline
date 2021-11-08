@@ -8,10 +8,15 @@
     color: black;
 }
 
+.logout-button {
+    border-radius: 5px;
+    background: #0096FF;
+}
+
 a {
     color:black;
 }
 
 a:hover {
-    color:#ef9273;
+    color:#0096FF;
 }

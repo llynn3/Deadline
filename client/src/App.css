@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300');
 @import url('https://fonts.googleapis.com/css2?family=PT+Serif');
+@import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&family=PT+Serif');
 
 root {
   background-color: #fef9f8;
@@ -16,7 +17,30 @@ root {
 } */
 
 @media screen and (max-width:450px) {
-  .nav-bar {
-    background-color: #ef9273;
+  img.banner { 
+    width: 300px; 
+    height: auto;
+  }
+
+  img.dogs-looking {
+    width: 100px;
+    height: auto;
+  }
+
+  .each-post {
+    max-width: 90vmin;
+    height: auto;
+  }
+  nav {
+    font-size: 14px;
+  }
+
+  .add {
+    max-width: 90vmin;
+    height: auto;
+  }
+
+  .footer {
+    position: absolute;
   }
 }

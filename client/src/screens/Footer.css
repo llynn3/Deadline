@@ -1,5 +1,7 @@
 .footer {
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     padding: 20px;
+    position:fixed;
+    right: 0;
 }

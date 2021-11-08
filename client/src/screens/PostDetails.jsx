@@ -16,8 +16,8 @@ const PostDetails = (props) => {
         const fetchedPost = async () => {
             const currentPost = await getPostById(postId);
             setPost(currentPost);
-            // console.log(currentPost);
-            console.log(props.user)
+            console.log(currentPost);
+            // console.log(props.user)
         }
         fetchedPost();
     }, [postId])
@@ -38,7 +38,8 @@ const PostDetails = (props) => {
     return (
         <section className="post-details">
             <h3 className="user">{props.user.username}</h3>
-            <h4>{post.body}</h4>
+            <img className="pic" src={post.image_url} height="400" width="290"/>
+            <h4>{post.caption}</h4>
             <h3>Comments</h3>
             {post?.comments?.map((comment) => (
                 <p>{comment.user.username}: {comment.content}</p> 

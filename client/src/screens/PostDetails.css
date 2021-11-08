@@ -7,20 +7,20 @@
     box-shadow: 1px 2px 3px rgba(0,0,0,0.9);
     margin: 10px auto;
     padding: 15px;
-    height: 550px;
-    width: 300px;
+    height: auto;
+    width: 400px;
 }
 
 .user {
-    color: #ef9273
+    color: #0096FF
 }
 
 .post-comment-button {
     border-radius: 5px;
-    background-color: #ef9273;
+    background-color: #0096FF;
 }
 
 .post-comment-button:hover {
     background-color: #000000;
-    color: #ef9273;
+    color: #0096FF;
 }

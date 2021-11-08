@@ -23,7 +23,7 @@ function App() {
         <main>
           <Route exact path="/">
             <Nav user={user} setUser={setUser} />
-            {/* <Landing /> */}
+            <Landing />
           </Route>
           <Route path="/home">
             <Nav user={user} />

@@ -11,7 +11,7 @@
     font-family: 'Nunito', sans-serif;
 }
 
-.add-post {
+.edit-form {
     margin-top: 30px;
     display: grid;
     flex-direction: column;
@@ -21,7 +21,7 @@
 
 .edit-button {
     border-radius: 5px;
-    background-color: #ef9273;
+    background-color: #0096FF;
 }
 
 .edit-button:hover {
