@@ -17,11 +17,11 @@ function App() {
 
   return (
     <div className="App">
-      <Nav user={user} setUser={setUser} />
+      <Nav user={user} />
       <Switch>
         <main>
           <Route exact path="/">
-            <Home />
+            <Home user={user} setUser={user} />
           </Route>
           <Route path="/login">
             <Login setUser={setUser} />
