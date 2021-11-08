@@ -13,7 +13,7 @@ const Nav = (props) => {
     <nav>
       <div className="nav-bar">
         <img src={pawprint} alt="pawprint" height="45" />
-      <Link to="/">Home
+      <Link to="/home">Home
       {/* <h4 style={{color: "#4895ef"}}>{user.username}!</h4> */}
       </Link>
       {props.user ? (
