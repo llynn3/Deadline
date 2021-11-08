@@ -38,13 +38,13 @@ const PostDetails = (props) => {
     return (
         <section className="post-details">
             <h3 className="user">{props.user.username}</h3>
-            <img className="pic" src={post.image_url} height="400" width="290"/>
+            <img className="pic" src={post.image_url} alt="dog" height="400" width="290"/>
             <h4>{post.caption}</h4>
             <h3>Comments</h3>
             {post?.comments?.map((comment) => (
                 <p>{comment.user.username}: {comment.content}</p> 
             ))}
-                <h3 classname="add-comment">Add your own comment!</h3>
+                <h3 className="add-comment">Add your own comment!</h3>
                 <form onSubmit={handleSubmit}>
                     <label htmlFor="content"></label>
                     <input id="content"

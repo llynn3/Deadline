@@ -1,23 +1,26 @@
 import './Nav.css';
 import { logout } from "../services";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import pawprint from "../images/small-blue-paw-print.jpeg";
 
 const Nav = (props) => {
+  const history = useHistory();
+
   const handleClick = async () => {
     await logout();
     props.setUser(null);
+    history.push('/')
   }
 
   return (
     <nav>
       <div className="nav-bar">
+        <Link to="/">
         <img src={pawprint} alt="pawprint" height="45" />
-      <Link to="/home">Home
-      {/* <h4 style={{color: "#4895ef"}}>{user.username}!</h4> */}
-      </Link>
+        </Link>
       {props.user ? (
         <>
+      <Link to="/home">Home</Link>
         <Link to="/posts">Posts</Link>
         <Link to="/new">New Post</Link>
         <button className="logout-button" onClick={handleClick}>Log out</button>

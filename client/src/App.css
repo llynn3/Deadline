@@ -6,24 +6,20 @@ root {
   background-color: #fef9f8;
 }
 
-/* main {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-evenly;
-  align-items: center;
-  padding: 15px;
-  overflow: auto;
-  position: relative;
-} */
 
 @media screen and (max-width:450px) {
   img.banner { 
-    width: 300px; 
+    width: 450px; 
     height: auto;
   }
 
   img.dogs-looking {
-    width: 100px;
+    width: 300px;
+    height: auto;
+  }
+
+  img.dog-sign {
+    width: 450px;
     height: auto;
   }
 

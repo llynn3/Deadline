@@ -7,7 +7,7 @@ const Home = (props) => {
   return (
     <section className="home">
       <img className="dog-sign" src={welcome} alt="welcome"/><br/>
-      Welcome home 
+      Welcome home!
     </section>
   );
 };
