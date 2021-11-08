@@ -41,6 +41,7 @@ const EditPost = (props) => {
 
 
     return (
+        <section className="edit-post">
         <form className="edit-form" onSubmit={handleSubmit}>
             <label htmlFor="body">Body:
             <input id="body" type="text" value={body} onChange={(e) => setBody(e.target.value)} /></label>
@@ -49,6 +50,7 @@ const EditPost = (props) => {
             </label>
             <button className="edit-button" type="submit">Done editing</button>
         </form>
+        </section>
     )
 }
 
