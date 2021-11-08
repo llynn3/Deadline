@@ -26,7 +26,7 @@ function App() {
             <Landing />
           </Route>
           <Route path="/home">
-            <Nav user={user} />
+            <Nav user={user} setUser={setUser}/>
             <Home />
           </Route>
           <Route path="/login">
